@@ -1,0 +1,44 @@
+{
+    "port":8282,
+    "host":"localhost",
+    "selectedDataSource":"elasticsearch",
+    "tagLimit":12,
+    "nodeSizeBy":"pr",
+    "selectedLayout":"YifanHuLayout",
+    "layout":{
+        "yiFanHuLayout":{
+            "name" : "YifanHuLayout",
+            "iteration": 5,
+            "distance":5
+
+        },
+        "fruchtermanReingold":{
+          "name":"FruchtermanReingold",
+          "area":1.5,
+          "speed":100,
+          "gravity":100,
+          "iteration":100
+        }
+    },
+    "datasource":{
+          "filePath":"E:/workspace/eclipse/gsak-kit/tweets.txt",
+          "elasticsearchDocument":{
+               "host":"localhost",
+               "port":9300,
+               "clusterName":"elasticsearch",
+               "index":"xsbir_v2",
+               "type":"xsbir_v2_type",
+               "searchFields":["description","porposaltitle"],
+               "searchValue":"We",
+               "returnFields":["description","keywords", "firmName", "phase","porposaltitle","source","topic_number","type","unique_id","year"],
+               "documentsLimit":100
+          },
+          "elasticsearchDataLoad":{
+                 "fields":[
+                    {"name":"keywords" , "splitBy":","}
+                 ]
+          }
+    }
+    
+
+}
